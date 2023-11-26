@@ -1,0 +1,9 @@
+set number
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set autoindent
+set smarttab
+set smartindent
+set laststatus=2
+syntax on
