@@ -204,12 +204,17 @@ bar {
 
 
 # Autostart
+# xset
+exec --no-startup-id xset s 3600
+exec --no-startup-id xset dpms 3600 3600 3600
 # Polkit
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # Compositor - Picom
 exec --no-startup-id picom -b
 # Wallpaper - Nitrogen
 exec --no-startup-id nitrogen --restore
+# Redshift
+exec --no-startup-id redshift-gtk
 
 # Set some programs to start in certain workspaces
 assign [class="Geany"] $ws2

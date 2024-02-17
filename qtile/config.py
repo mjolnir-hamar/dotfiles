@@ -226,12 +226,23 @@ wmname = "LG3D"
 
 @hook.subscribe.startup_once
 def autostart():
+    xrandr = subprocess.check_output(["xrandr", "-q"]).decode("utf-8").split("\n")
+    connected_screens = set([
+        line.split(" ")[0] for line in xrandr if " connected " in line
+    ])
+
+ 
     for cmd in [
+        ["xset", "s", "3600"],
+        ["xset", "dpms", "3600", "3600", "3600"],
         ["xss-lock", "--transfer-sleep-lock", "--", "i3lock", "-c", "000000", "--nofork"],
         ["nm-applet"],
+        ["ibus-daemon", "-rxRd"],
         ["/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"],
         ["picom", "-b"],
-        ["nitrogen", "--restore"]
+        ["nitrogen", "--restore"],
+        ["redshift-gtk"]
         ]:
         subprocess.Popen(cmd)
+
 
