@@ -1,0 +1,9 @@
+[window]
+opacity = 0.65
+
+[font]
+normal = { family = "UbuntuMonoNerdFont", style = "Regular" }
+bold = { family = "UbuntuMonoNerdFont", style = "Bold" }
+italic = { family = "UbuntuMonoNerdFont", style = "Italic" }
+bold_italic = { family = "UbuntuMonoNerdFont", style = "Bold Italic" }
+size = 10
